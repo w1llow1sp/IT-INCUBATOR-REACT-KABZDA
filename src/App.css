@@ -2,3 +2,6 @@
   width: 600px;
   margin: 20px auto;
 }
+.starElement {
+  cursor: pointer;
+}

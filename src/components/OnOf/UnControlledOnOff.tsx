@@ -39,9 +39,9 @@ function ControlledOnOff(props:PropsType) {
 //-------------------------------------------------->
     return (
         <div>
-            <button onClick={()=>props.setOn(!props.on)} style={onStyle}>On</button>
-            <button onClick={ () =>props.setOn(!props.on)} style={offStyle}>Off</button>
-            <div onClick={ () => props.setOn(!props.on)} style={indicatorStyle}></div>
+            <button onClick={()=>props.setOn(true)} style={onStyle}>On</button>
+            <button onClick={ () =>props.setOn(false)} style={offStyle}>Off</button>
+            <div  style={indicatorStyle}></div>
         </div>
     )
 }

@@ -19,23 +19,26 @@ function App(props:any) {
         <div className={'App'}>
 
             <h2>🔇Uncontrolled components🔇</h2>
-            <h4>🟢Its controlled Off/On Buttons!</h4>
+            <h4>🟢Its uncontrolled Off/On Buttons!</h4>
 
-            <ControlledOnOff on={on} setOn={setOn}/>
-            <ControlledOnOff on={on} setOn={setOn}/>
-            <ControlledOnOff on={on} setOn={setOn}/>
+            <OnOff/>
+            <OnOff/>
+            <OnOff/>
+
             <UnControlledRating />
-            <UnControlledAccordion titleValue={'---Users---'} />
+
+            <UnControlledAccordion titleValue={'📜---Users---'} />
 
             <h2>🔊Controlled components🔊</h2>
-            <h4>🔵Its incontrolled Off/On Buttons!</h4>
 
-            <OnOff />
-            <OnOff />
-            <OnOff />
+            <h4>🔵Its controlled Off/On Buttons!</h4>
+
+            <ControlledOnOff on={on} setOn={setOn}/>
+            <ControlledOnOff on={on} setOn={setOn}/>
+            <ControlledOnOff on={on} setOn={setOn}/>
 
             <Accordion
-                titleValue={'---Menu---'}
+                titleValue={'📜---Menu---'}
                 value={accordionCollapsed}
                 onClick={setAccordionCollapsed} />
             <Rating

@@ -9,8 +9,10 @@ function UnControlledRating(props: RatingPropsType) {
     let [value, setValue]=useState(0)
 
         return (
+
             <div>
-                <Star selected={value > 0}/>
+                <h1>------Uncontroled raiting---------</h1>
+                <Star selected={value > 0} />
                 <button onClick={ () => {setValue(1)} }>1 </button>
                 <Star selected={value > 1}/>
                 <button onClick={ () => {setValue(2)} }>2</button>
@@ -36,10 +38,10 @@ function Star(props: StarPropsType) {
     }
 
     if (props.selected === true) {
-        return <span style={starStyle}><b>star </b></span>
+        return <span style={starStyle}><b>⭐ </b></span>
     } else {
         return (
-            <span style={starStyle}>star </span>
+            <span style={starStyle}>★ </span>
         )
     }
 }

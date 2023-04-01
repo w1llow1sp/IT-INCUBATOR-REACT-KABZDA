@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 
 type PropsType = {
-    // on: boolean
+    //on: boolean
 }
 
 function OnOff(props:PropsType) {
@@ -12,7 +12,8 @@ function OnOff(props:PropsType) {
     const onStyle = {
         width: '50px',
         height: '40px',
-        border: '1px solid black',
+        border: '1px solid green',
+        borderRadius: '3px',
         margin: '5px',
         padding: '5px',
         backgroundColor: on ? 'green' : 'white' //Тернарное выражение
@@ -20,7 +21,8 @@ function OnOff(props:PropsType) {
     const offStyle = {
         width: '50px',
         height: '40px',
-        border: '1px solid black',
+        borderRadius: '3px',
+        border: '1px solid red',
         margin: '5px',
         padding: '5px',
         backgroundColor: on ? 'white' : 'red', //Тернарное выражение

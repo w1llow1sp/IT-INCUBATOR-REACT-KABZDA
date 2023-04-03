@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 
+type PropsType = {
+    defaultOn?:boolean
+}
 
-export function UncontrollOnOff() {
-    let [on,setOn] = useState(false);
+export function UncontrollOnOff(props: PropsType) {
+    let [on,setOn] = useState(props.defaultOn ? props.defaultOn : false);
 
     //Стили через обьект:
     const onStyle = {

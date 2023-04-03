@@ -29,7 +29,7 @@ function App(props:any) {
             <UncontrollOnOff/>
             <UncontrollOnOff/>
 
-            <UnControlledRating />
+            <UnControlledRating onChange={()=>{}}/>
 
             <UnControlledAccordion titleValue={'📜---Users---'} />
 

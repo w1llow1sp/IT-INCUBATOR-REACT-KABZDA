@@ -1,11 +1,16 @@
 import React, {useState} from 'react';
 import './App.css';
-import { RaitingValueType, Rating} from "./components/Raiting/Raiting";
-import OnOff from "./components/OnOf/OnOff";
-import UnControlledAccordion from "./components/Accordion/UnControlledAccordion";
-import {Accordion} from "./components/Accordion/Accordion";
-import UnControlledRating from "./components/Raiting/UnControlledRaiting";
-import ControlledOnOff from "./components/OnOf/UnControlledOnOff";
+
+//import uncontrolled components
+import {UncontrollOnOff} from "./components/OnOf/UnControlledOnOff";
+import {UnControlledAccordion} from "./components/Accordion/UnControlledAccordion";
+import {UnControlledRating} from "./components/Raiting/UnControlledRaiting";
+
+//import controlled components
+import {ControlledOnOff} from "./components/OnOf/ControlledOnOff";
+import {ControlledAccordion} from "./components/Accordion/Accordion";
+import {ControlledRating, RaitingValueType} from "./components/Raiting/ControlledRaiting";
+
 
 function App(props:any) {
 
@@ -20,10 +25,9 @@ function App(props:any) {
 
             <h2>🔇Uncontrolled components🔇</h2>
             <h4>🟢Its uncontrolled Off/On Buttons!</h4>
-
-            <OnOff/>
-            <OnOff/>
-            <OnOff/>
+            <UncontrollOnOff/>
+            <UncontrollOnOff/>
+            <UncontrollOnOff/>
 
             <UnControlledRating />
 
@@ -37,11 +41,11 @@ function App(props:any) {
             <ControlledOnOff on={on} setOn={setOn}/>
             <ControlledOnOff on={on} setOn={setOn}/>
 
-            <Accordion
+            <ControlledAccordion
                 titleValue={'📜---Menu---'}
                 value={accordionCollapsed}
                 onClick={setAccordionCollapsed} />
-            <Rating
+            <ControlledRating
                 value={raitingControlledValue}
                 onClick={setRaitingControlledValue}/>
 

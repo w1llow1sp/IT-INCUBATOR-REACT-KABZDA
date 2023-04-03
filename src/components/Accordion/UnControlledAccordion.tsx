@@ -36,6 +36,5 @@ function AccordionBody() {
     )
 }
 
-export default UnControlledAccordion;
 
 

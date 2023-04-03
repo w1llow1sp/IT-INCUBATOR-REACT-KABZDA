@@ -1,12 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
-type PropsType = {
-    on: boolean
-    setOn : (on:boolean) => void
-}
-
-function ControlledOnOff(props:PropsType) {
+export function UncontrollOnOff() {
+    let [on,setOn] = useState(false);
 
     //Стили через обьект:
     const onStyle = {
@@ -16,7 +12,7 @@ function ControlledOnOff(props:PropsType) {
         borderRadius: '3px',
         margin: '5px',
         padding: '5px',
-        backgroundColor: props.on ? 'green' : 'white' //Тернарное выражение
+        backgroundColor: on ? 'green' : 'white' //Тернарное выражение
     };
     const offStyle = {
         width: '50px',
@@ -25,7 +21,7 @@ function ControlledOnOff(props:PropsType) {
         border: '1px solid red',
         margin: '5px',
         padding: '5px',
-        backgroundColor: props.on ? 'white' : 'red', //Тернарное выражение
+        backgroundColor: on ? 'white' : 'red', //Тернарное выражение
     };
     const indicatorStyle = {
         width: '10px',
@@ -34,17 +30,15 @@ function ControlledOnOff(props:PropsType) {
         border: '1px solid black',
         display: 'inline-block',
         marginLeft: '5px',
-        backgroundColor: props.on ? 'green' : 'red'
+        backgroundColor: on ? 'green' : 'red'
     };
 //-------------------------------------------------->
     return (
         <div>
-            <button onClick={()=>props.setOn(true)} style={onStyle}>On</button>
-            <button onClick={ () =>props.setOn(false)} style={offStyle}>Off</button>
-            <div  style={indicatorStyle}></div>
+            <button onClick={() => { setOn(true)} } style={onStyle}>On</button>
+            <button onClick={ () => { setOn(false)} } style={offStyle}>Off</button>
+            <div onClick={ () => { setOn(true)} } style={indicatorStyle}></div>
         </div>
     )
 }
 
-
-export default ControlledOnOff;

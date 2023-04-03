@@ -6,7 +6,7 @@ type AccordionPropsType = {
     onClick:(collapsed:boolean)=>void
 }
 
-export function Accordion(props: AccordionPropsType) {
+export function ControlledAccordion(props: AccordionPropsType) {
     return <div>
         <h4>🔵Its controlled accordion!</h4>
         <AccordionTitle title={props.titleValue} onClick={props.onClick} value={props.value}/>

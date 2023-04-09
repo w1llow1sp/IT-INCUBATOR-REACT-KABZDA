@@ -10,6 +10,7 @@ import {UnControlledRating} from "./components/Raiting/UnControlledRaiting";
 import {ControlledOnOff} from "./components/OnOf/ControlledOnOff";
 import {ControlledAccordion} from "./components/Accordion/Accordion";
 import {ControlledRating, RaitingValueType} from "./components/Raiting/ControlledRaiting";
+import {UnControlledInput} from "./components/Input/UnContrtolledInput";
 
 
 function App(props:any) {
@@ -32,6 +33,7 @@ function App(props:any) {
             <UnControlledRating onChange={()=>{}}/>
 
             <UnControlledAccordion titleValue={'📜---Users---'} />
+            <UnControlledInput/>
 
             <h2>🔊Controlled components🔊</h2>
 

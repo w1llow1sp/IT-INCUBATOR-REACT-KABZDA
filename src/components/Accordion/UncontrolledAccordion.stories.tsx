@@ -5,7 +5,7 @@ import {useState} from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'UnControlledAccordion Accordion',
+    title: 'Uncontrol components/UnControlledAccordion Accordion',
     component: UnControlledAccordion,
     };
 

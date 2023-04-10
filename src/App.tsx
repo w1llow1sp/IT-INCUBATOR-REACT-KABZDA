@@ -27,6 +27,7 @@ function App(props:any) {
 
     return (
         <div className={'App'}>
+            <div className={'controll-wrapper'}>
 
             <h2>🔇Uncontrolled components🔇</h2>
             <h4>🟢Its uncontrolled Off/On Buttons!</h4>
@@ -38,7 +39,8 @@ function App(props:any) {
 
             <UnControlledAccordion titleValue={'📜---Users---'} />
             <UnControlledInput/>
-
+            </div>
+            <div className={'uncontroll-wrapper'}>
             <h2>🔊Controlled components🔊</h2>
 
             <h4>🔵Its controlled Off/On Buttons!</h4>
@@ -60,7 +62,7 @@ function App(props:any) {
             <ControlledRating
                 value={raitingControlledValue}
                 onClick={setRaitingControlledValue}/>
-
+            </div>
         </div>
     );
 }

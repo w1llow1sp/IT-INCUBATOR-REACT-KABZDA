@@ -1,6 +1,9 @@
 .App {
-  width: 600px;
+  width: 100%;
   margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .starElement {
   cursor: pointer;

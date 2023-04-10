@@ -1,5 +1,11 @@
 import React from "react";
 
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {Accordion} from "@mui/material";
+
 export type ItemType ={
     id:string
     title:string}
@@ -23,34 +29,47 @@ export type AccordionPropsType = {
 export function ControlledAccordion(props: AccordionPropsType) {
     return <div>
         <h4>🔵Its controlled accordion!</h4>
-        <AccordionTitle title={props.titleValue} onClick={props.onClick} value={props.value}/>
-        {!props.value && <AccordionBody items={props.items} onClickCallback={props.onClickCallback}/>}
-    </div>
+        <Accordion>
+            <AccordionSummary
+                expandIcon={<ExpandMoreIcon/>}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+            >
+                <AccordionTitle title={props.titleValue} />
+            </AccordionSummary>
+            <AccordionDetails>
+
+                {props.items.map(el =>
+                    <Typography key={el.id}>
+                        {el.title}
+                        <hr/>
+                    </Typography>)}
+            </AccordionDetails>
+        </Accordion>
+        </div>
 
 }
 
-export type AccordionBodyPropsType = {
+/*export type AccordionBodyPropsType = {
     items:Array<ItemType>
     onClickCallback: (id:string) => void
-}
-function AccordionBody(props:AccordionBodyPropsType) {
+}*/
+/*function AccordionBody(props:AccordionBodyPropsType) {
     return (
-        <ul>
+        <AccordionDetails>
             {props.items.map(el =>
-            <li onClick={()=>props.onClickCallback(el.id)} key={el.id}>{el.title}</li>)}
-        </ul>
+            <Typography onClick={()=>props.onClickCallback(el.id)} key={el.id}>{el.title}</Typography>)}
+        </AccordionDetails>
     )
-}
+}*/
 
 type AccordionTitlePropsType = {
     title: string
-    value: boolean
-    onClick:(collapsed:boolean)=>void
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     return (
-        <h3 onClick={()=>props.onClick(!props.value)}>{props.title}</h3>
+        <Typography>{props.title}</Typography>
     )
 }
 

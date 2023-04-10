@@ -1,4 +1,8 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
+import Button from '@mui/material/Button';
+
+import TextField from '@mui/material/TextField';
+
 
 export const UnControlledInput = () => {
     const [value, setValue] = useState('');
@@ -22,14 +26,20 @@ export const UnControlledInput = () => {
             <h4>Its Uncontrolled Inputs</h4>
             <div>
                 <h5>🟢Uncontrolled Input with Ref</h5>
-                <input ref={inputRef} id={'inputID'}/>
-                <button onClick={save}>S A V E</button>
-                action value : {value}
+                <TextField size='small' label="input Value" variant="outlined" inputRef={inputRef} id={'inputID'}/>
+                <br/>
+                <Button variant="contained" onClick={()=>save()}>Save</Button>
+                <br/>
+                <br/>
+                <i><b>Action value:</b></i>  {value}
             </div>
 
             <div>
                 <h5>🟢Uncontrolled Input with onChange()</h5>
-                <input onChange={onChangeHandle}/> - {value}
+                <TextField size='small' label="input Value" variant="outlined" onChange={onChangeHandle}/>
+                <br/>
+                <br/>
+               <i><b>Value:</b></i> {value2}
             </div>
 
         </div>

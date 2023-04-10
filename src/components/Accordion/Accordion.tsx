@@ -1,5 +1,9 @@
 import React from "react";
 
+export type ItemType ={
+    id:string
+    title:string}
+
 export type AccordionPropsType = {
     /**
      *
@@ -11,23 +15,29 @@ export type AccordionPropsType = {
      * @param  value is value of clicked item
      */
     onClick:(collapsed:boolean)=>void
+    items:Array<ItemType>
+    onClickCallback: () => void
+
 }
 
 export function ControlledAccordion(props: AccordionPropsType) {
     return <div>
         <h4>🔵Its controlled accordion!</h4>
         <AccordionTitle title={props.titleValue} onClick={props.onClick} value={props.value}/>
-        {!props.value && <AccordionBody/>}
+        {!props.value && <AccordionBody items={props.items} onClickCallback={props.onClickCallback}/>}
     </div>
 
 }
 
-function AccordionBody() {
+export type AccordionBodyPropsType = {
+    items:Array<ItemType>
+    onClickCallback: (id:string) => void
+}
+function AccordionBody(props:AccordionBodyPropsType) {
     return (
         <ul>
-            <li>I controlled accodion</li>
-            <li>I controlled accodion</li>
-            <li>I controlled accodion</li>
+            {props.items.map(el =>
+            <li onClick={()=>props.onClickCallback(el.id)} key={el.id}>{el.title}</li>)}
         </ul>
     )
 }

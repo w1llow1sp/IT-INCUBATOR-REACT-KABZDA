@@ -13,6 +13,8 @@ import {ControlledRating, RaitingValueType} from "./components/Raiting/Controlle
 import {UnControlledInput} from "./components/Input/UnContrtolledInput";
 
 
+
+
 function App(props:any) {
 
     const [raitingControlledValue, setRaitingControlledValue] = useState<RaitingValueType>(1);
@@ -20,6 +22,8 @@ function App(props:any) {
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true);
 
     const [on, setOn] = useState<boolean>(false);
+
+    const onClickCallback=()=>{}
 
     return (
         <div className={'App'}>
@@ -46,7 +50,13 @@ function App(props:any) {
             <ControlledAccordion
                 titleValue={'📜---Menu---'}
                 value={accordionCollapsed}
-                onClick={setAccordionCollapsed} />
+                onClick={setAccordionCollapsed}
+                items={[
+                    {id: 'sasd-dsds', title: 'Im controlled Accordion'},
+                    {id: 'sssa-dsdd', title: 'Im controlled Accordion-2'},
+                    {id: 'werf-dadd', title: 'Im controlled Accordion-3'}
+                ]}
+            onClickCallback={onClickCallback}/>
             <ControlledRating
                 value={raitingControlledValue}
                 onClick={setRaitingControlledValue}/>

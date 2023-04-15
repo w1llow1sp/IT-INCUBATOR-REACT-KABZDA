@@ -11,6 +11,7 @@ import {ControlledOnOff} from "./components/OnOf/ControlledOnOff";
 import {ControlledAccordion} from "./components/Accordion/Accordion";
 import {ControlledRating, RaitingValueType} from "./components/Raiting/ControlledRaiting";
 import {UnControlledInput} from "./components/Input/UnContrtolledInput";
+import {Select} from "./components/Select/Select";
 
 
 
@@ -18,10 +19,9 @@ import {UnControlledInput} from "./components/Input/UnContrtolledInput";
 function App(props:any) {
 
     const [raitingControlledValue, setRaitingControlledValue] = useState<RaitingValueType>(1);
-
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true);
-
     const [on, setOn] = useState<boolean>(false);
+    const [selected, setSelected] = useState<string>('sasd-dsds');
 
     const onClickCallback=()=>{}
 
@@ -62,6 +62,15 @@ function App(props:any) {
             <ControlledRating
                 value={raitingControlledValue}
                 onClick={setRaitingControlledValue}/>
+                <Select
+                    value={selected}
+                    onChange={setSelected}
+                    items={[
+                        {id: 'sasd-dsds', title: 'none'},
+                        {id: 'sssa-dsdd', title: 'Minsk'},
+                        {id: 'werf-dadd', title: 'Moscow'},
+                        {id: 'sass-dsfs', title: 'Kiev'},
+                    ]}/>
             </div>
         </div>
     );

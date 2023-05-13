@@ -13,16 +13,14 @@ type AccordionTitlePropsType = {
 
 
 export function UnControlledAccordion(props: AccordionPropsType) {
-   /* let [collapsed, setCollapsed] = useState(false);*/
-
 
     const [state, dispatch] = useReducer(reducer, {collapsed:false})
+    const MemoizedAccordionTitle = React.memo(AccordionTitle);
 
 
     return <div>
         <h4>🟢Its incontrolled accordion!</h4>
-        {/*<AccordionTitle title={props.titleValue} onClick={()=>{setCollapsed(!collapsed)}}/>*/}
-        <AccordionTitle title={props.titleValue} onClick={()=>{dispatch({type:TOGGLE_COLLAPSED})}}/>
+        <MemoizedAccordionTitle title={props.titleValue} onClick={()=>{dispatch({type:TOGGLE_COLLAPSED})}}/>
         {!state.collapsed && <AccordionBody/>}
     </div>
 }

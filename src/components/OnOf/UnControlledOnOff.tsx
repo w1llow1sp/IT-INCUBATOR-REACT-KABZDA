@@ -4,7 +4,7 @@ type PropsType = {
     defaultOn?:boolean
 }
 
-export function UncontrollOnOff(props: PropsType) {
+export const UncontrollOnOff = React.memo((props: PropsType) => {
     let [on,setOn] = useState(props.defaultOn ? props.defaultOn : false);
 
     //Стили через обьект:
@@ -43,5 +43,8 @@ export function UncontrollOnOff(props: PropsType) {
             <div onClick={ () => { setOn(true)} } style={indicatorStyle}></div>
         </div>
     )
-}
+})
 
+
+/*
+Вы можете использовать React.memo в компоненте UncontrollOnOff, чтобы избежать повторных рендеров, когда состояние on не изменяется*/

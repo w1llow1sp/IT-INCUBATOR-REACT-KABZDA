@@ -21,12 +21,14 @@ export const UnControlledInput = () => {
         const actionValue = e.currentTarget.value
         setValue2(actionValue)}
 
+    const MemoizedTextField = React.memo(TextField);
+
     return (
         <div>
             <h4>Its Uncontrolled Inputs</h4>
             <div>
                 <h5>🟢Uncontrolled Input with Ref</h5>
-                <TextField size='small' label="input Value" variant="outlined" inputRef={inputRef} id={'inputID'}/>
+                <MemoizedTextField size='small' label="input Value" variant="outlined" inputRef={inputRef} id={'inputID'}/>
                 <br/>
                 <Button variant="contained" onClick={()=>save()}>Save</Button>
                 <br/>
@@ -36,7 +38,7 @@ export const UnControlledInput = () => {
 
             <div>
                 <h5>🟢Uncontrolled Input with onChange()</h5>
-                <TextField size='small' label="input Value" variant="outlined" onChange={onChangeHandle}/>
+                <MemoizedTextField size='small' label="input Value" variant="outlined" onChange={onChangeHandle}/>
                 <br/>
                 <br/>
                <i><b>Value:</b></i> {value2}

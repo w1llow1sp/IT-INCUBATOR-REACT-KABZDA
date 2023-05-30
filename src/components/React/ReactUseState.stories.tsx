@@ -1,7 +1,7 @@
 import {useState, memo, useCallback, useMemo} from "react";
 
 export default {
-    title: 'useState demo'
+    title: 'React/useState demo'
 }
 
 
